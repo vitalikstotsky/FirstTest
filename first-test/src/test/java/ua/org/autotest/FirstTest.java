@@ -21,15 +21,15 @@ public static void setup() {
     driver. manage().window().maximize();
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-    driver.get ("https://mail.ukr.net/desktop/login ");
+    driver.get ("http://www.i.ua/");
 }
 @Test
 public void userLogin() {
-    WebElement loginField = driver.findElement(By.id("id-1"));
-    loginField.sendKeys("S_H_U_T_N_I_K");
-    WebElement passwordField = driver.findElement(By.id("id-2"));
-    passwordField.sendKeys("124");
-    WebElement loginButton = driver.findElement(By.xpath("//div[@class='button__content']"));
+    WebElement loginField = driver.findElement(By.name("login"));
+    loginField.sendKeys("vitalqa91");
+    WebElement passwordField = driver.findElement(By.name("pass"));
+    passwordField.sendKeys("0001kmsda");
+    WebElement loginButton = driver.findElement(By.cssSelector("input[value=Войти]"));
     loginButton.click();
     WebElement profileUser = driver.findElement(By.cssSelector(".login-button__user"));
     String mailUser = profileUser.getText();
